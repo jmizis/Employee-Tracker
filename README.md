@@ -15,6 +15,8 @@ URL: https://drive.google.com/file/d/1YUJ0IwqNQrfh1oGMyhQCoQqqs1uXsc0f/view
 ## Github 
 
 On Github I was able to create a new repository where I was able to push all my work to. Before even starting the challenge I had to clone the new repository to my computer first. I cloned it using my gitbash, from there on any code I worked on visual studio code I was able to save it and push it back to my repository. Once all my work was done I did a final push.
+![Screenshot (1)](https://user-images.githubusercontent.com/107073756/197909571-ab8c4c4f-006d-47b7-ae92-7b47be6e0514.png)
+
 
 
 
