@@ -8,6 +8,9 @@ In this assignment I needed to build a command-line application to be able to ma
 
 ## Video 
 
+For this assignment we had to create a walkthrough video that demonstrated our command-line application. I used the app Screencastify to create my video. Below you can watch the video.
+URL: https://drive.google.com/file/d/1YUJ0IwqNQrfh1oGMyhQCoQqqs1uXsc0f/view
+
 
 ## Github 
 
@@ -22,3 +25,5 @@ This challenge was tougher than the previous ones but it's a great way to show o
 
 ## Links 
 Git Hub URL: https://github.com/jmizis/Employee-Tracker
+
+Screencastify URL: https://drive.google.com/file/d/1YUJ0IwqNQrfh1oGMyhQCoQqqs1uXsc0f/view

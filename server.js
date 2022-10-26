@@ -26,7 +26,6 @@ function init() {
     "Add a new department",
     "Add a new role",
     "Add a new employee",
-    "Update employee role",
     "Exit"
     ]
     }])
@@ -47,12 +46,11 @@ function init() {
     case "Add a new role":
     addRole();
     break;
+   
     case "Add a new employee":
     addEmployee();
     break;
-    case "Update employee role":
-    updateRole();
-    break;
+    
     case "exit":
     quit()
     break;
@@ -112,6 +110,7 @@ function viewRoles(){
       function addEmployee() {
         db.query("SELECT * FROM role", function (err, res) {
         if (err) throw err;
+         //asking for the three properties on the employee table 
         inquirer.prompt([
         {
         name: "firstName",
@@ -147,28 +146,50 @@ function viewRoles(){
         })
         };
 
-        // Add new role.
-        function addRole() {
-          inquirer.prompt([
-          {
-          name: "addRole",
-          message: "What is the name of the new role you would like to add?"
-          }
-          ])
-          .then(function (answer) {
-         db.query("INSERT INTO role SET ?", {
-          title: answer.addRole
-          },
-          function (err, res) {
-          if (err) throw err;
-          console.log("Role");
-          init();
-          }
-          );
-          });
-          }
       
       
+         
+        //  Adding New Role 
+          function addRole() {
+            db.query("SELECT * FROM department ", function (err, res) {
+            if (err) throw err;
+            //asking for the three properties on the roles table 
+            inquirer.prompt([
+            {
+            name: "title",
+            type: "input",
+            message: "What is the title of the new role?"
+            },
+            {
+            name: "salary",
+            type: "input",
+            message: "What is the salary of this position?",
+            },
+            {
+            name: "deptId",
+            type: "list",
+            message: "Select a department for this role",
+            choices: res.map(item => item.name)
+            }
+            ])
+            .then(function (answers) {
+            const selectedDept = res.find(dept => dept.name === answers.deptId);
+            db.query("INSERT INTO role SET ?",
+            {
+            title: answers.title,
+            salary: answers.salary,
+            department_id: selectedDept.id
+            },
+            function (err, res) {
+            if (err) throw err;
+            console.log("Added new role");
+            init();
+            }
+            );
+            });
+            })
+            };
+            
     
         
           
